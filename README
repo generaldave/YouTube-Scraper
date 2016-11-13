@@ -1,3 +1,5 @@
+Done in Python 3.
+
 This app uses youtube-dl: http://rg3.github.io/youtube-dl/download.html
 
 Being on satellite internet, buffering and low resolution on YouTube videos got 
@@ -51,6 +53,8 @@ Whether user opened automater.py or debug.py the path where videos are
 downloaded to can be edited in Scraper.py in any text editor (PATH variable). 
 When a video is downloaded the app will create a folder of the channel name, 
 unless one exists. This is where the new video will be downloaded to.
+
+Also, in Automater.py, set PATH to the same.
 
 When the app is finished downloading, the app will send an email to the user
 to let him or her know which video has finished downloading, giving the user

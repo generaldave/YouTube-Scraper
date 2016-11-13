@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # David Fuller
 #
 # 7-28-2016
@@ -24,7 +24,7 @@ def cls():
 # Method handles viewing content
 def viewContent():
     viewChannels()
-    choice = int(raw_input("\nChoice: "))
+    choice = int(input("\nChoice: "))
     if (not channels.isValid(choice)):
         return
     channels.viewChannelContent(channels.getChannel(choice), True)
@@ -39,7 +39,7 @@ def viewChannels():
 # Method handles adding channels
 def addChannel():
     viewChannels()
-    name = raw_input("\nEnter channel name: ")
+    name = input("\nEnter channel name: ")
     if (not name == ""):
         channels.appendChannel(name)
         channels.commitChannels()
@@ -47,7 +47,7 @@ def addChannel():
 # Method handles deleting channels
 def deleteChannel():
     viewChannels()
-    choice = int(raw_input("Choice: "))
+    choice = int(input("Choice: "))
     if (not channels.isValid(choice)):
         return
     channels.deleteChannel(choice)
@@ -55,8 +55,8 @@ def deleteChannel():
 
 # Method downloads a single video given video id
 def downloadVideo():
-    channel = raw_input("Enter YouTube username: ")
-    videoID = raw_input("Enter video ID: ")
+    channel = input("Enter YouTube username: ")
+    videoID = input("Enter video ID: ")
     channels.downloadVideo(channel, videoID)
     message = channel + " " + videoID + " Has finished downloading"
     emailer.email(message)
@@ -78,7 +78,7 @@ def menuChoiceIsValid(menu, choice):
 # Get user input from menu
 def menuInput(menu):
     print (menu)
-    return raw_input("\nChoice? ")
+    return input("\nChoice? ")
 
 # Handles main menu
 def mainMenu():

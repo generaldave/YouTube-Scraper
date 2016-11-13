@@ -6,7 +6,7 @@
 class FileHandler(object):
     # Constructor
     def __init__(self, filename):
-        self.filename = "/path/to/channels/file/"
+        self.filename = "/path/to/downloaded/git/files/"
         self.filename = self.filename + filename
 
     # Method overwrites given file with given token

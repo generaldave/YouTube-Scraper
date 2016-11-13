@@ -3,7 +3,7 @@
 # 8-1-2016
 
 from __future__ import unicode_literals
-import urllib
+import urllib.request
 import lxml.html
 import requests
 import os
@@ -14,7 +14,7 @@ import youtube_dl
 class Scraper(object):
     # Scrape number is number of links to scrape from page
     SCRAPE_NUMBER = 60   # To ensure there are at least 10 video links
-    PATH = "/path/to/videos/"
+    PATH = "/path/to/download/videos/to/"
     
     # Constructor
     def __init__(self):
@@ -53,7 +53,7 @@ class Scraper(object):
 
     # Method scrapes content from YouTube channel
     def scrape(self):
-        channel = urllib.urlopen(self.url)
+        channel = urllib.request.urlopen(self.url)
         tree = lxml.html.fromstring(channel.read())
         vidID = []
         vidTitle = []
@@ -86,7 +86,7 @@ class Scraper(object):
                 self.videoID.append(ID)
 
         # Append video Titles
-        for index in xrange(len(self.videoID)):
+        for index in range(len(self.videoID)):
             if vidTitle[index + self.modifier] not in self.videoTitle:
                 self.videoTitle.append(vidTitle[index + self.modifier])
 
@@ -96,7 +96,7 @@ class Scraper(object):
         print (channel)
         print ("")
         counter = 1
-        for i in xrange(0, len(self.videoID)):
+        for i in range(0, len(self.videoID)):
             print (self.videoID[i], " - ", self.videoTitle[i][:80])
             if counter >= amount:
                 break
