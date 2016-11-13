@@ -14,7 +14,7 @@ import youtube_dl
 class Scraper(object):
     # Scrape number is number of links to scrape from page
     SCRAPE_NUMBER = 60   # To ensure there are at least 10 video links
-    PATH = "/media/generaldave/storage/Videos/Youtube Downloads/"
+    PATH = "/path/to/videos/"
     
     # Constructor
     def __init__(self):
