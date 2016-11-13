@@ -1,0 +1,58 @@
+This app uses youtube-dl: http://rg3.github.io/youtube-dl/download.html
+
+Being on satellite internet, buffering and low resolution on YouTube videos got 
+old fast. I created this app to download videos from my favourite YouTube 
+channels overnight, so I could avoid the buffers and watch them in high 
+definition.
+
+The "channels" file can be edited with any text editor. It contains the name of
+my favourite channels. The user can either add to the channels are input their
+own. Make sure this is a comma delimited list. For example:
+
+			generaldave,LinusTechTips,ZiggyDStarcraft,paulshardware
+
+The user can either run automater.py or debug.py.
+
+automater.py is set up to scan user's favourite channels, listed in "channels",
+to find their newest 10 videos every day at 2:00 AM. It will then compare the videos to the download directory to see if any new videos have been uploaded. If any have, it will download them one at a time to their appropriate directory, described below.
+
+debug.py is a little different. When user runs it, user is presented with this 
+menu:
+
+			0: View Channel Content
+			1: View Channels
+			2: Add Channel
+			3: Delete Channel
+			4: Download a Video
+			5: Quit
+
+			Choice:
+
+"View Channel Content" will ask user to input another number corresponding to 
+the channel name that user would like to view conted of, list gotten from 
+"channels" file. It will then show user the newest 10 videos by ID and title of 
+the given channel.
+
+"View Channels" shows a list of user's favourite channels, gotten from 
+"channels" file.
+
+"Add Channel" allows user to add a new channel to the "channels" file.
+
+"Delete Channel" allows user to delete a channel from "channels" file.
+
+"Download a Video" allows user to download a single video given a channel name
+and video ID.
+
+Whether user opened automater.py or debug.py the path where videos are 
+downloaded to can be edited in Scraper.py in any text editor (PATH variable). 
+When a video is downloaded the app will create a folder of the channel name, 
+unless one exists. This is where the new video will be downloaded to.
+
+When the app is finished downloading, the app will send an email to the user
+to let him or her know which video has finished downloading, giving the user
+the channel name and video ID. Email address and password can be set up in 
+Email.py. Change GMAIL to your email address and PASS to your password.
+
+Disclaimer: Use at own risk. As far as Google is concerned, there is no legal 
+action to be taken by those that download YouTube vidoes. However, Google has
+stated that anyone caught will have their account permanently terminated.
