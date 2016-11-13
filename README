@@ -1,6 +1,4 @@
-This app was written for a Linux based system. It may or may not work in Windows and Mac.
-
-It uses youtube-dl: http://rg3.github.io/youtube-dl/download.html
+This app uses youtube-dl: http://rg3.github.io/youtube-dl/download.html
 
 Being on satellite internet, buffering and low resolution on YouTube videos got 
 old fast. I created this app to download videos from my favourite YouTube 
@@ -8,14 +6,14 @@ channels overnight, so I could avoid the buffers and watch them in high
 definition.
 
 The "channels" file can be edited with any text editor. It contains the name of
-my favourite channels. The user can either add to the channels are input their
+my favourite channels. The user can either add to the channels or input their
 own. Make sure this is a comma delimited list. For example:
 
-		generaldave,LinusTechTips,ZiggyDStarcraft,paulshardware
+			generaldave,LinusTechTips,ZiggyDStarcraft,paulshardware
 
 The path to "channels" file, for the purpose of the app, can be changed in
 FileHandler.py. Change self.filename = "/path/to/channels/file" to the 
-appropriate path.
+appropriate path (path where files were extracted to).
 
 The user can either run automater.py or debug.py.
 
