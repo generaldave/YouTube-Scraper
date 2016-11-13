@@ -43,12 +43,27 @@ class Scraper(object):
     def startAt(self, idCount, titleCount):
         halfIDCount = int(.5 * idCount)
         start = self.roundUp(halfIDCount, 2) + titleCount - halfIDCount - idCount
-        if (halfIDCount % 2 == 0):
-            start = start - 1
-            if (titleCount % 2 == 0):
-                start = start + 1
-        elif (halfIDCount % 2 != 0):
+        if (start % 2 == 0 and idCount % 2 == 0 and \
+            halfIDCount % 2 != 0 and titleCount % 2 == 0):
             start = start + 1
+        elif (start % 2 == 0 and idCount % 2 != 0 and \
+              halfIDCount % 2 != 0 and titleCount % 2 == 0):
+            start = start - 3
+        elif (start % 2 == 0 and idCount % 2 != 0 and \
+              halfIDCount % 2 == 0 and titleCount % 2 != 0):
+            start = start
+        elif (start % 2 != 0 and idCount % 2 == 0 and \
+              halfIDCount % 2 != 0 and titleCount % 2 == 0):
+            start = start + 6
+        elif (start % 2 != 0 and idCount % 2 == 0 and \
+              halfIDCount % 2 == 0 and titleCount % 2 != 0):
+            if (start == 1):
+                start = start + 17
+            else:
+                start = start - 1
+        elif (start % 2 != 0 and idCount % 2 != 0 and \
+              halfIDCount % 2 == 0 and titleCount % 2 == 0):
+            start = start
         return start
 
     # Method scrapes content from YouTube channel
@@ -76,7 +91,7 @@ class Scraper(object):
             if counter >= self.SCRAPE_NUMBER:
                 break
             counter = counter + 1
-
+        
         # videoTitle starting index modifier
         self.modifier = self.startAt(len(vidID), len(vidTitle))
 
