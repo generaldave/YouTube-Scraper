@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 # David Fuller
 #
 # 8-6-2016
@@ -10,7 +10,7 @@ from threading import Timer
 import os
 
 # Constant
-PATH = "/media/generaldave/storage/Videos/Youtube Downloads/"
+PATH = "/path/to/download/videos/to/"
 AMOUNT = 3   # Amount of videos to check in each channel
 
 # Global variables
