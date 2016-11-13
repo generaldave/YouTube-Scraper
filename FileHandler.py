@@ -6,7 +6,7 @@
 class FileHandler(object):
     # Constructor
     def __init__(self, filename):
-        self.filename = "/media/generaldave/storage/Stuff/Programming Stuff/Python/YoutubeScraper/"
+        self.filename = "/path/to/channels/file/"
         self.filename = self.filename + filename
 
     # Method overwrites given file with given token
