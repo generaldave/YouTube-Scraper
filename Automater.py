@@ -10,7 +10,7 @@ from threading import Timer
 import os
 
 # Constant
-PATH = "/media/generaldave/storage/Videos/Youtube Downloads/"
+PATH = "/path/to/videos"
 AMOUNT = 3   # Amount of videos to check in each channel
 
 # Global variables
