@@ -9,7 +9,11 @@ The "channels" file can be edited with any text editor. It contains the name of
 my favourite channels. The user can either add to the channels are input their
 own. Make sure this is a comma delimited list. For example:
 
-			generaldave,LinusTechTips,ZiggyDStarcraft,paulshardware
+		generaldave,LinusTechTips,ZiggyDStarcraft,paulshardware
+
+The path to "channels" file, for the purpose of the app, can be changed in
+FileHandler.py. Change self.filename = "/path/to/channels/file" to the 
+appropriate path.
 
 The user can either run automater.py or debug.py.
 
