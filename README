@@ -1,4 +1,6 @@
-This app uses youtube-dl: http://rg3.github.io/youtube-dl/download.html
+This app was written for a Linux based system. It may or may not work in Windows and Mac.
+
+It uses youtube-dl: http://rg3.github.io/youtube-dl/download.html
 
 Being on satellite internet, buffering and low resolution on YouTube videos got 
 old fast. I created this app to download videos from my favourite YouTube 
