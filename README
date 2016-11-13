@@ -1,4 +1,4 @@
-Updated to Python 3.
+Done in Python 3.
 
 This app was written for use in Ubuntu. It may or may not work in Windows and Mac.
 
@@ -9,15 +9,11 @@ old fast. I created this app to download videos from my favourite YouTube
 channels overnight, so I could avoid the buffers and watch them in high 
 definition.
 
-The "channels" file can be edited with any text editor. It contains the name of
-my favourite channels. The user can either add to the channels or input their
-own. Make sure this is a comma delimited list. For example:
+The "channels" file, not Channels.py, can be edited with any text editor. It contains the name of my favourite channels. The user can either add to the 
+channels or input their own. Make sure this is a comma delimited list. 
+For example:
 
 			generaldave,LinusTechTips,ZiggyDStarcraft,paulshardware
-
-The path to "channels" file, for the purpose of the app, can be changed in
-FileHandler.py. Change self.filename = "/path/to/channels/file" to the 
-appropriate path (path where files were extracted to).
 
 The user can either run automater.py or debug.py.
 
@@ -52,16 +48,17 @@ the given channel.
 and video ID.
 
 Whether user opened automater.py or debug.py the path where videos are 
-downloaded to can be edited in Scraper.py in any text editor (PATH variable). 
-When a video is downloaded the app will create a folder of the channel name, 
-unless one exists. This is where the new video will be downloaded to.
-
-Also, in Automater.py, set PATH to the same.
+downloaded to will be within the Videos folder where user extraced the git files.
+If the folder doesn't exist yet, the app will create it. In the Videos folder, 
+there will be more folders with channel names, that's where the videos will be
+for each individual channel.
 
 When the app is finished downloading, the app will send an email to the user
 to let him or her know which video has finished downloading, giving the user
 the channel name and video ID. Email address and password can be set up in 
-Email.py. Change GMAIL to your email address and PASS to your password.
+Email.py. Change GMAIL to your email address and PASS to your password. The app
+will crash when done downloading a single video if the email and password is
+not set up.
 
 Disclaimer: Use at own risk. As far as Google is concerned, there is no legal 
 action to be taken by those that download YouTube vidoes. However, Google has

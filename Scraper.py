@@ -14,7 +14,6 @@ import youtube_dl
 class Scraper(object):
     # Scrape number is number of links to scrape from page
     SCRAPE_NUMBER = 60   # To ensure there are at least 10 video links
-    PATH = "/path/to/download/videos/to/"
     
     # Constructor
     def __init__(self):
@@ -22,6 +21,11 @@ class Scraper(object):
         self.modifier = 0
         self.videoID = []
         self.videoTitle = []
+        self.path = os.getcwd() + "/Videos/"
+
+        # If self.path doesn't exist, create it
+        if (not os.path.exists(self.path)):
+            os.makedirs(self.path)
 
     # Method returns video IDs
     def getVideoIDs(self):
@@ -121,7 +125,7 @@ class Scraper(object):
     # Method downloads video
     def downloadVideo(self, channel, videoID):
         # Download to directory
-        path = self.PATH + channel
+        path = self.path + channel
         if (not os.path.exists(path)):
             os.makedirs(path)
         os.chdir(path)

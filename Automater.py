@@ -10,7 +10,7 @@ from threading import Timer
 import os
 
 # Constant
-PATH = "/path/to/download/videos/to/"
+PATH   = os.getcwd() + "/Videos/"
 AMOUNT = 3   # Amount of videos to check in each channel
 
 # Global variables
@@ -36,7 +36,11 @@ def autoDownloader():
     videos = []
     newVideos = []
     videoIDs = []
-    videoTitles =[]  
+    videoTitles =[]
+
+    # If PATH doesn't exist, create it
+    if (not os.path.exists(PATH)):
+        os.makedirs(PATH)
 
     # Populate ID and title lists - from YouTube
     for c in xrange(channels.getCount()):

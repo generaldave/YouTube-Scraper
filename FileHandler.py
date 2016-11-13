@@ -2,11 +2,13 @@
 #
 # 7-27-2016
 
+import os
+
 #Define a File Handler class
 class FileHandler(object):
     # Constructor
     def __init__(self, filename):
-        self.filename = "/path/to/downloaded/git/files/"
+        self.filename = os.getcwd() + "/"
         self.filename = self.filename + filename
 
     # Method overwrites given file with given token
